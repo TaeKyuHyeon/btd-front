@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const childProcessExec = require('child_process').exec;
+const util = require('util');
+
+const exec = util.promisify(childProcessExec);
+
+const REPO_NAMES = { FE: '', BE: 'be' };
+const BRANCH_REGEX = new RegExp(`feature\/(${REPO_NAMES.FE}|${REPO_NAMES.BE})(#[0-9]+)`, 'g');
+const PERMITTED_MODES = ['message', 'template'];
+const MESSAGE_REGEX = /\[.*\]/;
+
+const getCurrentBranch = async () => {
+    const branchName = await exec('git rev-parse --abbrev-ref HEAD');
+    if (branchName.stderr) {
+        throw new Error(stderr);
+    }
+    return branchName.stdout.trim();
+};
+
+const getBranchInfo = (branchName) => {
+    const branch_result = BRANCH_REGEX.exec(branchName);
+    if (!branch_result || branchName.length < 2) {
+        process.exit(0);
+    }
+
+    const repoName = branch_result[1];
+    const issueID = branch_result[2];
+    if (!Object.values(REPO_NAMES).includes(repoName) || !issueID) {
+        process.exit(0);
+    }
+
+    return { repoName, issueID };
+};
+
+const checkCommitMessage = async () => {
+    const messgeaPath = process.argv[2];
+    const mode = process.argv[3];
+    const message = fs.readFileSync(messgeaPath, 'utf8').trim();
+    let branchName = '';
+
+    try {
+        branchName = await getCurrentBranch();
+    } catch (err) {
+        console.log('cannot get current branch name');
+        console.log(err);
+        process.exit(0);
+    }
+    const { repoName, issueID } = getBranchInfo(branchName);
+
+    if (!MESSAGE_REGEX.test(message) && PERMITTED_MODES.includes(mode)) {
+        const template = `[${repoName !== REPO_NAMES.FE ? repoName : ''}${issueID}] ${message}`;
+        fs.writeFile(messgeaPath, template, 'utf8', () => {
+            process.exit(0);
+        });
+    }
+};
+
+checkCommitMessage();

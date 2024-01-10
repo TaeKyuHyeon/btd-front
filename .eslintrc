@@ -1,0 +1,36 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"airbnb",
+		"airbnb/hooks",
+        "plugin:@typescript-eslint/recommended",
+		"prettier"
+	],
+	"env": {
+		"browser": true,
+		"jest": true
+	},
+	"parserOptions": {
+		"allowImportExportEverywhere": true,
+		"ecmaVersion": 2019,
+		"sourceType": "module"
+	},
+	"plugins": ["@typescript-eslint"],
+	"settings": {
+		"import/resolver": {
+			"typescript": {},
+			"node": {
+				"moduleDirectory": ["node_modules", "src"]
+			}
+		},
+		"react": {
+			"createClass": "createReactClass",
+			"pragma": "React",
+			"version": "detect"
+		}
+	},
+	"rules": {
+		"react/react-in-jsx-scope": 0, // react import 필수
+		"import/no-extraneous-dependencies": 0,
+	}
+}
