@@ -1,9 +1,10 @@
 {
 	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint"],
 	"extends": [
 		"airbnb",
+		"airbnb-typescript",
 		"airbnb/hooks",
-        "plugin:@typescript-eslint/recommended",
 		"prettier"
 	],
 	"env": {
@@ -13,9 +14,9 @@
 	"parserOptions": {
 		"allowImportExportEverywhere": true,
 		"ecmaVersion": 2019,
-		"sourceType": "module"
+		"sourceType": "module",
+		"project": ["./tsconfig.json"]
 	},
-	"plugins": ["@typescript-eslint"],
 	"settings": {
 		"import/resolver": {
 			"typescript": {},
@@ -31,6 +32,78 @@
 	},
 	"rules": {
 		"react/react-in-jsx-scope": 0, // react import 필수
+		"react/require-default-props": 0, // defaultProps 필수
 		"import/no-extraneous-dependencies": 0,
-	}
+		"import/no-duplicates": 0, // 중복 가져오기 금지
+		"import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal", "type", "unknown"],
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                },
+                "pathGroups": [
+					{
+						"pattern": "{react*,react*/**}",
+						"group": "builtin",
+						"position": "before"
+					},
+                    {
+                        "pattern": "*!(.scss)",
+                        "group": "internal",
+						"position": "after"
+                    },
+					{
+						"pattern": "@constants/**/*",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@api/**/*",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@assets/**/*",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@states/**/*",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@pages/**/*",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@components/**/*",
+						"group": "internal",
+						"position": "after"
+					},
+					{
+						"pattern": "@hooks/**/*",
+						"group": "internal",
+						"position": "after"
+					},
+                    {
+                        "pattern": "*.scss",
+                        "group": "unknown",
+                        "position": "after"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": [],
+                "distinctGroup": false,
+                "newlines-between": "always"
+            }
+        ],
+		"import/no-relative-packages": 0, // 상대경로 금지
+		"import/extensions": 0 // import 시 확장자 필수
+
+	},
+	
+
 }

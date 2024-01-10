@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@mixin absoluteV {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+@mixin absoluteXV {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+@mixin absoluteX($top: auto) {
+    position: absolute;
+    left: 50%;
+    top: $top;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+@mixin ellipsismulti($line) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@mixin ellipsissingle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin mediaQuery($breakpoint: 'desktopS', $type: 'min') {
+    $mediaList: (
+        'mobileS': (
+            'max': $breakpoint-mobile - 1px,
+            'min': $breakpoint-mobileS,
+        ),
+        'mobile': (
+            'max': $breakpoint-tablet - 1px,
+            'min': $breakpoint-mobile,
+        ),
+        'tablet': (
+            'max': $breakpoint-desktopS - 1px,
+            'min': $breakpoint-tablet,
+        ),
+        'desktopS': (
+            'max': $breakpoint-desktopM - 1px,
+            'min': $breakpoint-desktopS,
+        ),
+        'desktopM': (
+            'min': $breakpoint-desktopM,
+        ),
+    );
+
+    @if $type == 'only' and $breakpoint != 'desktopM' {
+        @media (min-width: map-get($mediaList, $breakpoint, 'min')) and (max-width: map-get($mediaList, $breakpoint, 'max')) {
+            @content;
+        }
+    } @else {
+        @media (#{$type}-width: map-get($mediaList, $breakpoint, $type)) {
+            @content;
+        }
+    }
+}
+
+@mixin maxWidth {
+    @include mediaQuery('tablet') {
+        max-width: $content-max-width-mobile;
+        margin: 0 auto;
+    }
+    @include mediaQuery {
+        max-width: $content-max-width-desktop;
+    }
+}
+
+@mixin placeHolder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::placeholder {
+        @content;
+    }
+}
+
+@mixin horizontalScroll {
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
