@@ -6,4 +6,8 @@
     justify-content: center;
     max-width: 500px;
     margin: 0 auto;
+    padding: 0 $content-x-padding;
+    @include mediaQuery('mobile', 'max') {
+        padding: 0 $content-x-padding-mobile;
+    }
 }

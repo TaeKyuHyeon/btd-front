@@ -7,9 +7,6 @@
     // align-items: center;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(#d34e3c, 0.4) 2px, transparent 2px);
-    background-size: 28px 28px;
-    background-position: 0 -30px;
 
     .textarea {
         position: absolute;
@@ -25,5 +22,9 @@
         outline: none;
         border: none;
         color: #000;
+        background-attachment: local;
+        background-image: linear-gradient(rgba(#d34e3c, 0.4) 2px, transparent 2px);
+        background-size: 28px 28px;
+        background-position: -5px -35px;
     }
 }

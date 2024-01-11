@@ -6,12 +6,9 @@ $breakpoint-mobile: 360px;
 $breakpoint-tablet: 600px;
 $breakpoint-desktopS: 1152px;
 $breakpoint-desktopM: 1440px;
-$content-max-width: 1080px;
-$content-min-width-desktop: 375px;
-$content-max-width-desktop: 681px;
-$content-max-width-mobile: 568px;
-$header-height: 56px;
-$header-max-width: 1080px;
+$content-max-width: 1280px;
+$content-x-padding: 40px;
+$content-x-padding-mobile: 14px;
 
 //색상표
 $point-red-color: #ff5252;
@@ -30,4 +27,11 @@ $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $font-weight-ultrabold: 900;
 
-$PC-font: -apple-system, BlinkMacSystemFont, helvetica, Apple SD Gothic Neo, '나눔고딕', NanumGothic, sans-serif;
+$default-font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    helvetica,
+    Apple SD Gothic Neo,
+    '나눔고딕',
+    NanumGothic,
+    sans-serif;
