@@ -1,9 +1,29 @@
 @import '@/scss/utils';
 
 .article {
+    position: relative;
     // display: flex;
     // justify-content: center;
     // align-items: center;
-    // background-color: #fbe9e7;
-    background-color: red;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(#d34e3c, 0.4) 2px, transparent 2px);
+    background-size: 28px 28px;
+    background-position: 0 -30px;
+
+    .textarea {
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+        background: transparent;
+        font-size: 14px;
+        line-height: 28px;
+        z-index: 2;
+        resize: none;
+        outline: none;
+        border: none;
+        color: #000;
+    }
 }
