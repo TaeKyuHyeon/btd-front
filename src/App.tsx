@@ -1,5 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+import ButtonDraw from '@/components/button/ButtonDraw';
+import Aside from '@/components/layout/Aside';
 import ContentWrapper from '@/components/layout/ContentWrapper';
 import Header from '@/components/layout/Header';
 import Panel from '@/components/layout/Panel';
@@ -21,6 +23,9 @@ function App() {
                             <Route path="*" element={<Error />} />
                         </Routes>
                     </Panel>
+                    <Aside>
+                        <ButtonDraw />
+                    </Aside>
                 </ContentWrapper>
             </ErrorBoundary>
         </BrowserRouter>

@@ -1,5 +1,7 @@
+import LineNote from '@/components/LineNote';
+
 function Pages() {
-    return <div>콘텐츠</div>;
+    return <LineNote />;
 }
 
 export default Pages;

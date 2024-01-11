@@ -9,9 +9,31 @@ const cx = classNames.bind(styles);
 function Panel({children}: PropsWithChildren) {
     return (
         <div className={cx('article')}>
-            <div className={cx('inner')}>
-                {/* {title && <h3 className={cx('title')}>{title}</h3>} */}
-                {children}
+            <div className={cx('notePad')}>
+                <div className={cx('hole_area')}>
+                    <div className={cx('hole')}>
+                        <div className={cx('ring')} />
+                    </div>
+                    <div className={cx('hole')}>
+                        <div className={cx('ring')} />
+                    </div>
+                    <div className={cx('hole')}>
+                        <div className={cx('ring')} />
+                    </div>
+                    <div className={cx('hole')}>
+                        <div className={cx('ring')} />
+                    </div>
+                    <div className={cx('hole')}>
+                        <div className={cx('ring')} />
+                    </div>
+                    <div className={cx('hole')}>
+                        <div className={cx('ring')} />
+                    </div>
+                    <div className={cx('hole')}>
+                        <div className={cx('ring')} />
+                    </div>
+                </div>
+                <div className={cx('content_area')}>{children}</div>
             </div>
         </div>
     );

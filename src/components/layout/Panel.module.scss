@@ -2,38 +2,52 @@
 
 .article {
     flex: 1;
-    overflow-y: auto;
-    margin-top: 50px;
-    border: 1px solid #e9edf2;
+    margin: 50px 0;
     border-radius: 10px;
     background-color: #fff;
-    .inner {
+    .notePad {
+        position: relative;
+        height: 100%;
+        .hole_area {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            width: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .hole {
+                position: relative;
+                width: 25px;
+                height: 25px;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 50%;
+            }
+
+            .ring {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 150%;
+                height: 50%;
+                margin: auto;
+                left: -100%;
+                background: #eee;
+                border-radius: 30%;
+            }
+        }
+    }
+    .content_area {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding: 30px 14px;
+        padding: 14px 14px 14px 42px;
         box-sizing: border-box;
-    }
-    .title {
-        padding: 22px 30px;
-        border-bottom: 1px solid #e9edf2;
-        font-size: 20px;
-        font-weight: 800;
-        line-height: 26px;
-        color: #303236;
     }
 }
 :global(.mobile) .article {
-    margin-top: 15px;
-
-    .title {
-        padding: 16px 14px 15px;
-        font-size: 18px;
-    }
-    .inner {
-        &.popup {
-            padding: 5px 15px;
-        }
-    }
+    margin: 20px 0;
 }

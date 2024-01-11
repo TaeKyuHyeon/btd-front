@@ -10,7 +10,7 @@ const cx = classnames.bind(styles);
 
 function Header() {
     return (
-        <header className={cx('header')}>
+        <header className={cx('article')}>
             <div className="">
                 <img src={flower} alt="꽃" width="39" height="50" className={cx('img')} />
             </div>
