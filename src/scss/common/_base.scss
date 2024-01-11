@@ -2,6 +2,14 @@
 @import '@/scss/utils';
 
 /* Common */
+
+@font-face {
+    font-family: 'UhBeeJJIBBABBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_five@.2.0/UhBeeJJIBBABBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body,
 p,
 h1,
@@ -36,7 +44,7 @@ textarea,
 select,
 button,
 table {
-    font-family: $PC-font;
+    font-family: UhBeeJJIBBABBA, $default-font-family;
     font-size: 14px;
     line-height: normal;
     letter-spacing: -0.5px;
@@ -46,12 +54,15 @@ body {
     overflow: hidden;
     position: relative;
     -webkit-text-size-adjust: none;
-    background-color: #FFF6D3;
-    background-image:
-        linear-gradient(#F5D27D 2px, transparent 2px),
-        linear-gradient(90deg, #F5D27D 2px, transparent 2px);
-    background-size: 20px 20px, 20px 20px;
-    background-position: -1px -1px, -1px -1px;
+    background-color: #fff6d3;
+    background-image: linear-gradient(#f5d27d 2px, transparent 2px),
+        linear-gradient(90deg, #f5d27d 2px, transparent 2px);
+    background-size:
+        20px 20px,
+        20px 20px;
+    background-position:
+        -1px -1px,
+        -1px -1px;
 }
 
 img,
