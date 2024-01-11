@@ -1,14 +1,16 @@
-import {useState} from 'react';
-
 import classNames from 'classnames/bind';
 
 import styles from './LineNote.module.scss';
 
 const cx = classNames.bind(styles);
 
-function NotePad() {
-    const [value, setValue] = useState<string>('');
+interface NotePadProps {
+    value: string;
+    setValue: (value: string) => void;
+    placeholder?: string;
+}
 
+function NotePad({value, setValue, placeholder}: NotePadProps) {
     return (
         <div className={cx('article')}>
             <textarea
@@ -17,6 +19,7 @@ function NotePad() {
                 onChange={(e) => {
                     setValue(e.target.value);
                 }}
+                placeholder={placeholder}
             />
         </div>
     );
