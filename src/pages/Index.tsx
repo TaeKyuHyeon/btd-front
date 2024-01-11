@@ -1,10 +1,11 @@
 import ContentWrapper from '@/components/common/ContentWrapper';
-import logo from '@/assets/logo.png';
+import Header from '@/components/common/Header';
 
 function Pages() {
     return (
         <ContentWrapper>
-            <img src={logo} alt="내가그린 그림일기" width="200" height="auto" />
+            <Header />
+            <div>콘텐츠</div>
         </ContentWrapper>
     );
 }

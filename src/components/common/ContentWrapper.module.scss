@@ -2,7 +2,8 @@
 
 .article {
     padding: 48px 40px 70px;
-    width: 930px;
+    width: 100%;
+    max-width: 930px;
     margin: 0 auto;
 }
 :global(.mobile) .article {

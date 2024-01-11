@@ -1,5 +1,5 @@
 import classnames from 'classnames/bind';
-import {isMobile} from 'react-device-detect';
+
 import ContentWrapper from './ContentWrapper';
 import styles from './ErrorContent.module.scss';
 import Panel from './Panel';
@@ -8,7 +8,7 @@ const cx = classnames.bind(styles);
 
 function ErrorContent() {
     return (
-        <ContentWrapper isMobile={isMobile}>
+        <ContentWrapper>
             <Panel>
                 <div className={cx('article')}>
                     {/* <IconNotice width={56} height={56} fill="#d3d8de" /> */}

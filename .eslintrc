@@ -101,7 +101,8 @@
             }
         ],
 		"import/no-relative-packages": 0, // 상대경로 금지
-		"import/extensions": 0 // import 시 확장자 필수
+		"import/extensions": 0, // import 시 확장자 필수
+		"react/jsx-no-useless-fragment": [1, {"allowExpressions": true}] // 
 
 	},
 	
