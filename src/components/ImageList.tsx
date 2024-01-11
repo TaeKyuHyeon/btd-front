@@ -4,8 +4,9 @@ import styles from './ImageList.module.scss';
 
 const cx = classNames.bind(styles);
 
+export type TImage = {id: string; url: string};
 interface ImageListProps {
-    list: {id: string; url: string}[];
+    list: TImage[];
 }
 
 function ImageList({list}: ImageListProps) {

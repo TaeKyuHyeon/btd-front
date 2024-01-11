@@ -29,4 +29,8 @@ axiosInstance.interceptors.response.use(
         return Promise.reject(error);
     },
 );
+
 export default axiosInstance;
+
+export const {CancelToken} = axios;
+export const {isCancel} = axios;
