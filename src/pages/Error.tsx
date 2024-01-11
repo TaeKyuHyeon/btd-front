@@ -1,6 +1,6 @@
 import {Route, Routes} from 'react-router-dom';
 
-import ErrorContent from '@/components/common/ErrorContent';
+import ErrorContent from '@/components/layout/ErrorContent';
 
 function Error() {
     return (

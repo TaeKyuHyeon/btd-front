@@ -1,11 +1,19 @@
 @import '@/scss/utils/';
 
 .article {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 50px;
     border: 1px solid #e9edf2;
     border-radius: 10px;
     background-color: #fff;
-    + .article {
-        margin-top: 10px;
+    .inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 30px 14px;
+        box-sizing: border-box;
     }
     .title {
         padding: 22px 30px;
@@ -15,20 +23,15 @@
         line-height: 26px;
         color: #303236;
     }
-    .inner {
-        padding: 30px;
-        &.popup {
-            padding: 5px 30px;
-        }
-    }
 }
 :global(.mobile) .article {
+    margin-top: 15px;
+
     .title {
         padding: 16px 14px 15px;
         font-size: 18px;
     }
     .inner {
-        padding: 30px 14px;
         &.popup {
             padding: 5px 15px;
         }

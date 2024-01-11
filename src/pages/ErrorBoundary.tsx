@@ -1,5 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
 import type {ErrorInfo, ReactNode} from 'react';
 import {Component} from 'react';
+
 import Error from '@/pages/Error';
 
 
@@ -15,6 +17,7 @@ interface State {
 class ErrorBoundary extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
+        // eslint-disable-next-line react/no-unused-state
         this.state = {hasError: false, info: null};
     }
 
@@ -31,8 +34,8 @@ class ErrorBoundary extends Component<Props, State> {
         if (this.state.hasError) {
             return <Error />;
         }
-        
-return this.props.children;
+
+        return this.props.children;
     }
 }
 
