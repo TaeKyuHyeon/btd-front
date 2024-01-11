@@ -3,13 +3,17 @@
 .article {
     overflow: hidden;
     flex: 1;
-    margin: 50px 0;
-    border-radius: 10px;
-    background-color: #fff;
+    margin: 20px 0 27px;
+    padding: 0 $content-x-padding;
+    @include mediaQuery('mobile', 'max') {
+        padding: 0 $content-x-padding-mobile;
+    }
 
     .notePad {
         position: relative;
         height: 100%;
+        background-color: #fff;
+        border-radius: 10px;
         box-shadow:
             0 0 0 1px #e3e5e8,
             0 1px 2px 0 rgba(0, 0, 0, 0.04);
@@ -43,6 +47,14 @@
                 background: #eee;
                 border-radius: 30%;
             }
+
+            @include mediaQuery('mobile', 'max') {
+                width: 20px;
+                .hole {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
         }
     }
     .content_area {
@@ -54,8 +66,13 @@
         max-height: 100%;
         padding: 14px 14px 14px 42px;
         box-sizing: border-box;
+
+        @include mediaQuery('mobile', 'max') {
+            padding-left: 37px;
+        }
     }
-}
-:global(.mobile) .article {
-    margin: 20px 0;
+
+    @include mediaQuery('mobile', 'max') {
+        margin: 15px 0;
+    }
 }

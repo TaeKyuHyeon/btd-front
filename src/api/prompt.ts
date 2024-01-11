@@ -58,6 +58,13 @@ export const postPromptMessage = async (msg: string): Promise<TPromptRes> => {
                 nsfw_content_detected: null,
                 nsfw_score: null,
             },
+            {
+                id: '6=-f9b3bf3b-8719-4159-91b0-fbf922e3c0c1',
+                image: 'https://artprojectsforkids.org/wp-content/uploads/2021/12/How-to-Draw-a-Minion.jpg.webp',
+                seed: 1287456585,
+                nsfw_content_detected: null,
+                nsfw_score: null,
+            },
         ],
     };
 
