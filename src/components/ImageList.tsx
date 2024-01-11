@@ -15,11 +15,10 @@ function ImageList({list}: ImageListProps) {
             <ul className={cx('image_list')}>
                 {list.map((image) => (
                     <li className={cx('item')} key={image.id}>
-                        <img src={image.url} alt="" className={cx('img')} width={260} height={260} />
-                        {/* <picture className={cx('img')}>
+                        <picture className={cx('pic')}>
                             <source srcSet={image.url} type="image/webp" className={cx('img')} />
                             <img src={image.url} alt="" className={cx('img')} />
-                        </picture> */}
+                        </picture>
                     </li>
                 ))}
             </ul>

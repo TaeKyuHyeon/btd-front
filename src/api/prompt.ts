@@ -46,14 +46,14 @@ export const postPromptMessage = async (msg: string): Promise<TPromptRes> => {
         images: [
             {
                 id: 'a2FybG8tdHJpdG9uLTY5NDliOGRjNWYtZnY3Mjg=-8c9715f7-8339-4f5e-9749-77de3081b4d7',
-                image: 'https://mk.kakaocdn.net/dna/karlo/image/2024-01-11/10/8c9715f7-8339-4f5e-9749-77de3081b4d7.webp?credential=smxRqiqUEJBVgohptvfXS5JoYeFv4Xxa&expires=1704938231&signature=Vdyhsg6UQ8uU%2Bqh4CuqOnDhKFug%3D',
+                image: 'https://previews.123rf.com/images/maudis60/maudis601609/maudis60160900516/64058266-%EC%95%84%EC%9D%B4%EA%B0%80-%EA%B7%B8%EB%A6%B0-%EA%B7%B8%EB%A6%BC-%EC%8B%9C%EA%B3%A8%EC%97%90%EC%84%9C-%ED%96%89%EB%B3%B5%ED%95%9C-%EA%B0%80%EC%A0%95.jpg',
                 seed: 4292169748,
                 nsfw_content_detected: null,
                 nsfw_score: null,
             },
             {
                 id: 'a2FybG8tdHJpdG9uLTY5NDliOGRjNWYtZnY3Mjg=-f9b3bf3b-8719-4159-91b0-fbf922e3c0c1',
-                image: 'https://mk.kakaocdn.net/dna/karlo/image/2024-01-11/10/f9b3bf3b-8719-4159-91b0-fbf922e3c0c1.webp?credential=smxRqiqUEJBVgohptvfXS5JoYeFv4Xxa&expires=1704938231&signature=vYJ6Brc4lSf5%2FIIOV5cJzL6Bz6I%3D',
+                image: 'https://previews.123rf.com/images/maudis60/maudis601609/maudis60160900561/64060838-%EC%95%84%EC%9D%B4%EA%B0%80-%EA%B7%B8%EB%A6%B0-%EA%B7%B8%EB%A6%BC-%EB%B4%84%EC%9D%98-%ED%96%89%EB%B3%B5%ED%95%9C-%EA%B0%80%EC%A0%95.jpg',
                 seed: 1287456585,
                 nsfw_content_detected: null,
                 nsfw_score: null,
