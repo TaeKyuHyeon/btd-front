@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 import {postPromptMessage} from '@/api/prompt';
-import ButtonDraw from '@/components/button/ButtonDraw';
+import ButtonNameTag from '@/components/button/ButtonNameTag';
 import Loading from '@/components/common/Loading';
 import ImageList, {TImage} from '@/components/ImageList';
 import Aside from '@/components/layout/Aside';
@@ -47,9 +47,9 @@ function PromptProto() {
             <Panel>{renderContent()}</Panel>
             <Aside>
                 {isLoading || imageList ? (
-                    <ButtonDraw text="다시 그리기" onClick={restartDraw} />
+                    <ButtonNameTag text="다시 그리기" onClick={restartDraw} />
                 ) : (
-                    <ButtonDraw text="그림 그리기" onClick={sendPromptMessage} />
+                    <ButtonNameTag text="그림 그리기" onClick={sendPromptMessage} />
                 )}
             </Aside>
         </>
