@@ -1,5 +1,3 @@
-import {Link} from 'react-router-dom';
-
 import classnames from 'classnames/bind';
 
 import flower from '@/assets/flower.png';
@@ -17,9 +15,9 @@ function Header() {
                 <img src={flower} alt="꽃" width={39} height={50} className={cx('img')} />
             </div>
             <h1 className={cx('logo')}>
-                <Link to="/">
+                <a href="/">
                     <img src={logo} alt="내가 그린 그림일기" width={260} height={50} className={cx('img')} />
-                </Link>
+                </a>
             </h1>
             <div>
                 <img src={tree} alt="나무" width={40} height={50} className={cx('img')} />
