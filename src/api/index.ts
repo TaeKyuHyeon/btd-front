@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const axiosInstance = axios.create({
     baseURL: API_BASE_URL,
-    withCredentials: true,
+    // withCredentials: true,
     timeout: API_TIMEOUT,
 });
 
@@ -32,5 +32,10 @@ axiosInstance.interceptors.response.use(
 
 export default axiosInstance;
 
-export const {CancelToken} = axios;
-export const {isCancel} = axios;
+/** 요청 취소 */
+const {CancelToken} = axios;
+export const source = CancelToken.source();
+
+export const cancelApiRequest = (msg: string) => {
+    source.cancel(`[cancelApiRequest] ${msg}`);
+};
