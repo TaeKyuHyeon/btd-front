@@ -23,6 +23,7 @@ axiosInstance.interceptors.response.use(
                 // aborted in useEffect cleanup
                 return Promise.resolve({status: 499});
             }
+
             // [To-do] 에러케이스 정리
             switch (error.response.status) {
                 case 404 || 500:
@@ -40,9 +41,5 @@ axiosInstance.interceptors.response.use(
 export default axiosInstance;
 
 /** 요청 취소 */
-const {CancelToken} = axios;
-export const source = CancelToken.source();
-
-export const cancelApiRequest = (msg: string) => {
-    source.cancel(`[cancelApiRequest] ${msg}`);
-};
+export const {CancelToken} = axios;
+export const {isCancel} = axios;

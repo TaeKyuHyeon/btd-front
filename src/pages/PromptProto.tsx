@@ -1,7 +1,6 @@
 import {useState} from 'react';
 
-import {cancelApiRequest} from '@/api';
-import {postPromptMessage} from '@/api/prompt';
+import {cancelApiRequest, postPromptMessage} from '@/api/prompt';
 import ButtonNameTag from '@/components/button/ButtonNameTag';
 import Loading from '@/components/common/Loading';
 import ImageList, {TImage} from '@/components/ImageList';
@@ -17,10 +16,18 @@ function PromptProto() {
 
     // 서버에 이미지 생성 요청
     const sendPromptMessage = () => {
+        if (!value) {
+            alert('명령어를 입력해주세요.');
+            return;
+        }
+
         setIsLoading(true);
         postPromptMessage({prompt: value})
-            .then(({images}) => {
-                setImageList(parsePromptImages(images));
+            .then(({generatedImage}) => {
+                setImageList(parsePromptImages(generatedImage.images));
+            })
+            .catch((err) => {
+                console.log(`[cancelApiRequest]`, err);
             })
             .finally(() => {
                 setIsLoading(false);
@@ -29,8 +36,7 @@ function PromptProto() {
 
     // 다시 그리기
     const restartDraw = () => {
-        // [To-do] cancelApi
-        cancelApiRequest('resartDraw');
+        if (isLoading) cancelApiRequest('restartDraw');
         setValue('');
         setImageList(null);
         setIsLoading(false); // [To-do] api 취소 후 loaidng=false 체크
