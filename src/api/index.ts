@@ -19,11 +19,18 @@ axiosInstance.interceptors.response.use(
     (response) => response, // response의 data만 return
     (error) => {
         if (error.response) {
-            const {errorCode} = error.response.data;
+            if (error.code === 'ERR_CANCELED') {
+                // aborted in useEffect cleanup
+                return Promise.resolve({status: 499});
+            }
             // [To-do] 에러케이스 정리
             switch (error.response.status) {
+                case 404 || 500:
+                    console.warn(`[Server ${error.response.status} Error] ${error}`);
+                    window.location.href = `/error/${error.response.status}`;
+                    break;
                 default:
-                    console.warn('[responseError]', errorCode, error);
+                    console.warn('[responseError]', error);
             }
         }
         return Promise.reject(error);
