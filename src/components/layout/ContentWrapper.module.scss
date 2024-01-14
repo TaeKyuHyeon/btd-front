@@ -6,7 +6,7 @@
     margin: 0 auto;
     padding: 35px 0 40px;
     max-width: $content-max-width;
-    height: 100vh;
+    height: 100%;
     box-sizing: border-box;
 
     @include mediaQuery('mobile', 'max') {
