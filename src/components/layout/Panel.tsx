@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 function Panel({children}: PropsWithChildren) {
     return (
         <div className={cx('article')}>
-            <div className={cx('notePad')}>
+            <div className={cx('LineNote')}>
                 <div className={cx('hole_area')}>
                     <div className={cx('hole')}>
                         <div className={cx('ring')} />
