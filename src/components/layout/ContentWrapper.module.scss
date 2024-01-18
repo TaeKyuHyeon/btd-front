@@ -3,14 +3,15 @@
 .article {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0 auto;
     padding: 35px 0 40px;
-    max-width: $content-max-width;
-    height: 100%;
+    width: $content-max-width;
+    min-height: 100%;
     box-sizing: border-box;
 
     @include mediaQuery('mobile', 'max') {
         padding: 25px 0;
-        width: auto;
+        width: initial;
     }
 }

@@ -2,61 +2,96 @@
 
 .article {
     overflow: hidden;
-    flex: 1;
-    margin: 20px 0 27px;
+    position: relative;
+    margin: 20px 0 27px 0;
     padding: 0 $content-x-padding;
     @include mediaQuery('mobile', 'max') {
+        margin: 15px 0;
         padding: 0 $content-x-padding-mobile;
     }
 
-    .LineNote {
+    .note_area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @include mediaQuery('mobile', 'max') {
+            display: block;
+        }
+    }
+
+    .hole_area {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        bottom: 10px;
+        width: 27px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @include mediaQuery('mobile', 'max') {
+            left: 10px;
+            width: 20px;
+        }
+
+        .hole {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            transform: translateX(75%);
+
+            // hole(left)
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -200%;
+                width: 100%;
+                padding-top: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                border-radius: 50%;
+                transform: translateX(-50%);
+            }
+
+            //ring
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 250%;
+                height: 50%;
+                margin: auto;
+                left: -200%;
+                background: #eee;
+                border-radius: 30px;
+            }
+        }
+    }
+
+    .page {
         position: relative;
-        height: 100%;
-        background-color: #fff;
+        aspect-ratio: 3/4;
         border-radius: 10px;
+        background-color: #fff;
         box-shadow:
             0 0 0 1px #e3e5e8,
             0 1px 2px 0 rgba(0, 0, 0, 0.04);
 
-        .hole_area {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            bottom: 10px;
-            width: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-
-            .hole {
-                position: relative;
-                width: 25px;
-                height: 25px;
-                background: rgba(0, 0, 0, 0.2);
-                border-radius: 50%;
-            }
-
-            .ring {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                width: 150%;
-                height: 50%;
-                margin: auto;
-                left: -100%;
-                background: #eee;
-                border-radius: 30%;
+        &.left {
+            .content_area {
+                padding: 14px 42px 14px 14px;
             }
 
             @include mediaQuery('mobile', 'max') {
-                width: 20px;
-                .hole {
-                    width: 20px;
-                    height: 20px;
-                }
+                display: none;
             }
         }
     }
+
     .content_area {
         display: flex;
         flex-direction: column;
@@ -70,9 +105,5 @@
         @include mediaQuery('mobile', 'max') {
             padding-left: 37px;
         }
-    }
-
-    @include mediaQuery('mobile', 'max') {
-        margin: 15px 0;
     }
 }

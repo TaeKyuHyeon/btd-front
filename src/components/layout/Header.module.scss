@@ -4,15 +4,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 500px;
+    width: 500px;
     margin: 0 auto;
     padding: 0 $content-x-padding;
-    @include mediaQuery('mobile', 'max') {
-        padding: 0 $content-x-padding-mobile;
-    }
 
     .img {
         width: 100%;
         height: auto;
+    }
+
+    @include mediaQuery('mobile', 'max') {
+        width: initial;
+        padding: 0 $content-x-padding-mobile;
     }
 }
