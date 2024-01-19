@@ -6,46 +6,53 @@
     height: 100%;
 
     .box {
-        aspect-ratio: auto 9/16;
+        // aspect-ratio: auto 9/16;
         display: flex;
+        height: 100%;
+        box-sizing: border-box;
         flex-direction: column;
         border: 1px solid #000;
     }
 
     .info_area {
-        height: 70px;
-        display: flex;
-        @include mediaQuery('mobile', 'max') {
-            height: 30px;
-        }
-        .info_item {
-            width: 50%;
-            + .info_item {
-                border-left: 1px solid #000;
-            }
-        }
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        align-items: center;
+        aspect-ratio: 9;
+        font-family: $default-font-family;
 
         > .date {
             position: relative;
-            padding: 0 20px;
             text-align: right;
-            @include mediaQuery('mobile', 'max') {
-                padding: 0 5px;
-            }
-            .label {
+
+            .date_label {
                 position: absolute;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
+                z-index: 10;
+            }
+
+            .date_input {
+                position: absolute;
+                top: 0;
+                left: 0;
             }
 
             .text_area {
+                overflow: hidden;
                 display: grid;
-                grid-template-columns: 2fr 1fr 1fr 1.5fr;
+                grid-template-columns: 1.7fr 0.8fr 1fr 1fr;
+                grid-gap: 6px;
                 align-items: center;
                 height: 100%;
-                font-size: 10px;
+                padding: 0 1.47vw;
+                white-space: nowrap;
+
+                @include mediaQuery('tablet', 'min') {
+                    padding: 0 10px;
+                }
             }
 
             .text + .text {
@@ -53,17 +60,60 @@
             }
 
             .num {
-                font-size: 30px;
+                font-size: 4.705vw;
+                font-family: UhBeeJJIBBABBA, $default-font-family;
+
+                @include mediaQuery('tablet', 'min') {
+                    font-size: 32px;
+                }
             }
 
             .unit {
                 padding-left: 2px;
-                font-family: $default-font-family;
-                font-size: clamp(9px, 6vw, 30px);
+                font-size: 2.941vw;
+                @include mediaQuery('tablet', 'min') {
+                    font-size: 20px;
+                }
             }
         }
 
-        .weather {
+        > .weather {
+            display: grid;
+            align-items: center;
+            text-align: center;
+            grid-template-columns: repeat(4, 1fr);
+
+            .label {
+                position: relative;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                padding: 0 1.176vw;
+
+                @include mediaQuery('tablet', 'min') {
+                    padding: 0 8px;
+                }
+            }
+
+            .input {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                color: transparent;
+                margin: 0;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                appearance: none;
+                cursor: pointer;
+            }
+
+            .icon {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 
@@ -76,11 +126,12 @@
         position: relative;
         .text_input {
             position: absolute;
-            top: 0;
+            // top: 0;
+            bottom: 100%;
             left: 0;
-            background-color: transparent;
+            // background: none;
             border: 0;
-            color: transparent;
+            // color: transparent;
             appearance: none;
         }
         .text_box {
@@ -112,8 +163,12 @@
             height: 100%;
             border: 1px solid #000;
             border-width: 1px 0 0 1px;
-            font-size: clamp(21px, 7vw, 33px);
             vertical-align: top;
+            font-size: 6.323vw;
+
+            @include mediaQuery('tablet', 'min') {
+                font-size: 43px;
+            }
 
             .text {
                 user-select: default;
@@ -138,14 +193,6 @@
                 50% {
                     opacity: 0;
                 }
-            }
-        }
-    }
-
-    @include mediaQuery('mobile', 'max') {
-        .info_area {
-            > .date {
-                padding: 0 5px;
             }
         }
     }

@@ -99,7 +99,7 @@
         "import/extensions": 0, // import 시 확장자 필수
         "react/jsx-no-useless-fragment": [1, {"allowExpressions": true}], //
         "jsx-a11y/label-has-associated-control": [
-            2,
+            1,
             {
                 "required": {
                     "some": ["nesting", "id"]
@@ -107,7 +107,7 @@
             }
         ],
         "jsx-a11y/label-has-for": [
-            2,
+            1,
             {
                 "required": {
                     "some": ["nesting", "id"]

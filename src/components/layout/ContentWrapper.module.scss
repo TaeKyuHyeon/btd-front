@@ -5,13 +5,9 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    padding: 35px 0 40px;
-    width: $content-max-width;
+    padding: 25px 0;
+    min-width: 320px;
+    max-width: $content-max-width;
     min-height: 100%;
     box-sizing: border-box;
-
-    @include mediaQuery('mobile', 'max') {
-        padding: 25px 0;
-        width: initial;
-    }
 }

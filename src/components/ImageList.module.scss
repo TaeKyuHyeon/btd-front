@@ -29,7 +29,7 @@
         max-height: 100%;
     }
 
-    @include mediaQuery('mobile', 'max') {
+    @include mediaQuery('tablet', 'max') {
         .image_list {
             grid-template-columns: 1fr;
         }

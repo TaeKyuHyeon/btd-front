@@ -12,18 +12,15 @@ function Panel({children}: PropsWithChildren) {
     return (
         <div className={cx('article')}>
             <div className={cx('note_area')}>
-                <div className={cx('page', 'left')}>
+                <div className={cx('page')}>
                     <div className={cx('content_area')}>{children}</div>
                 </div>
-                <div className={cx('page', 'right')}>
-                    <div className={cx('content_area')}>{children}</div>
-                </div>
+                <ul className={cx('hole_area')}>
+                    {Array.from({length: HOLE_COUNT}, (v, i) => i + 1).map((key) => (
+                        <li className={cx('hole')} key={key} />
+                    ))}
+                </ul>
             </div>
-            <ul className={cx('hole_area')}>
-                {Array.from({length: HOLE_COUNT}, (v, i) => i + 1).map((key) => (
-                    <li className={cx('hole')} key={key} />
-                ))}
-            </ul>
         </div>
     );
 }
