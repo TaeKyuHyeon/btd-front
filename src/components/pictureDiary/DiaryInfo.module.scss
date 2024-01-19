@@ -1,0 +1,104 @@
+@import '@/scss/utils';
+
+.article {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    align-items: center;
+    aspect-ratio: 9;
+    font-family: $default-font-family;
+
+    > .date {
+        position: relative;
+        text-align: right;
+
+        .date_label {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .date_input {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .text_area {
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.7fr 0.8fr 1fr 1fr;
+            grid-gap: 6px;
+            align-items: center;
+            height: 100%;
+            padding: 0 1.47vw;
+            white-space: nowrap;
+
+            @include mediaQuery('tablet', 'min') {
+                padding: 0 10px;
+            }
+        }
+
+        .text + .text {
+            padding-left: 5px;
+        }
+
+        .num {
+            font-size: 4.705vw;
+            font-family: UhBeeJJIBBABBA, $default-font-family;
+
+            @include mediaQuery('tablet', 'min') {
+                font-size: 32px;
+            }
+        }
+
+        .unit {
+            padding-left: 2px;
+            font-size: 2.941vw;
+            @include mediaQuery('tablet', 'min') {
+                font-size: 20px;
+            }
+        }
+    }
+
+    > .weather {
+        display: grid;
+        align-items: center;
+        text-align: center;
+        grid-template-columns: repeat(4, 1fr);
+
+        .label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 1.176vw;
+
+            @include mediaQuery('tablet', 'min') {
+                padding: 0 8px;
+            }
+        }
+
+        .input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: transparent;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .icon {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

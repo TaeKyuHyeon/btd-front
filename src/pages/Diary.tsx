@@ -6,7 +6,7 @@ import Loading from '@/components/common/Loading';
 import ImageList, {TImage} from '@/components/ImageList';
 import Aside from '@/components/layout/Aside';
 import Panel from '@/components/layout/Panel';
-import PictureDiary from '@/components/PictureDiary';
+import PictureDiary from '@/components/pictureDiary/PictureDiary';
 import {parsePromptImages} from '@/model/prompt';
 
 function Diary() {

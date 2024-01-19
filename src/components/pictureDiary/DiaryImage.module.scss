@@ -1,0 +1,10 @@
+@import '@/scss/utils';
+
+.article {
+    flex: 1;
+    border-top: 1px solid #373737;
+
+    @include mediaQuery('tablet', 'min') {
+        border-width: 2px;
+    }
+}

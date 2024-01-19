@@ -17,7 +17,7 @@ function App() {
                     <Header />
                     <Routes>
                         <Route path="/" element={<Diary />} />
-                        <Route path="/proto" element={<PromptProto />} />
+                        <Route path="/prompt" element={<PromptProto />} />
                         <Route path="*" element={<Error />} />
                     </Routes>
                 </ContentWrapper>
