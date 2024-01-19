@@ -2,6 +2,8 @@ import {PropsWithChildren} from 'react';
 
 import classNames from 'classnames/bind';
 
+import {indexArray} from '@/utils/common';
+
 import styles from './Panel.module.scss';
 
 const cx = classNames.bind(styles);
@@ -16,7 +18,7 @@ function Panel({children}: PropsWithChildren) {
                     <div className={cx('content_area')}>{children}</div>
                 </div>
                 <ul className={cx('hole_area')}>
-                    {Array.from({length: HOLE_COUNT}, (v, i) => i + 1).map((key) => (
+                    {indexArray(HOLE_COUNT).map((key) => (
                         <li className={cx('hole')} key={key} />
                     ))}
                 </ul>

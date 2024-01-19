@@ -1,5 +1,6 @@
 import {TImageRes} from '@/api/prompt';
-import {TImage} from '@/components/ImageList';
+
+export type TImage = {id: string; url: string};
 
 export const parsePromptImages = (data: TImageRes[]): TImage[] =>
     data.map((item) => {

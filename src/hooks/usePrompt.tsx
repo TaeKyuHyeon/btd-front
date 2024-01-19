@@ -1,8 +1,7 @@
 import {useState} from 'react';
 
 import {cancelApiRequest, postPromptMessage} from '@/api/prompt';
-import {TImage} from '@/components/ImageList';
-import {parsePromptImages} from '@/model/prompt';
+import {parsePromptImages, TImage} from '@/model/prompt';
 
 function usePrompt() {
     const [value, setValue] = useState<string>('');

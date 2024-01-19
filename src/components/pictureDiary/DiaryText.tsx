@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 import classNames from 'classnames/bind';
 
@@ -49,6 +49,11 @@ function DiaryText({textValue, setTextValue}: DiaryTextProps) {
         return '';
     };
 
+    useEffect(() => {
+        const newArray = textValue.split('');
+        setTextArray((arr) => arr.map((item) => ({...item, value: newArray[item.index]})));
+    }, [textValue]);
+
     return (
         <div className={cx('article')}>
             <input
@@ -61,8 +66,6 @@ function DiaryText({textValue, setTextValue}: DiaryTextProps) {
                     const {value} = e.target;
                     if (value.length <= MAX_LENGTH) {
                         setTextValue(value);
-                        const newArray = value.split('');
-                        setTextArray((arr) => arr.map((item) => ({...item, value: newArray[item.index]})));
                     }
                 }}
                 onKeyUp={changeSelection}
