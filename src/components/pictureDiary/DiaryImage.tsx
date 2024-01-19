@@ -24,8 +24,8 @@ function DiaryImage({isLoading, imageList}: DiaryImageProps) {
         <div className={cx('article')}>
             {checkEndError() || (
                 <>
-                    <input type="file" />
-                    <img src="" alt="" />
+                    {/* <input type="file" />
+                    <img src="" alt="" /> */}
                 </>
             )}
         </div>
