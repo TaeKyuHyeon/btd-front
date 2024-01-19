@@ -184,7 +184,7 @@ function PictureDiary() {
                         ref={textInput}
                         type="text"
                         maxLength={MAX_LENGTH}
-                        className={cx('text_input')}
+                        className={cx('text_input', 'blind')}
                         value={textValue}
                         onChange={(e) => {
                             const {value} = e.target;
