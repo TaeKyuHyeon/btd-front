@@ -2,61 +2,67 @@
 
 .article {
     overflow: hidden;
-    flex: 1;
-    margin: 20px 0 27px;
-    padding: 0 $content-x-padding;
-    @include mediaQuery('mobile', 'max') {
-        padding: 0 $content-x-padding-mobile;
+    position: relative;
+    margin: 15px 0;
+    padding: 0 $content-x-padding-mobile;
+
+    @include mediaQuery('tablet', 'min') {
+        margin: 20px 0 27px 0;
+        padding: 0 $content-x-padding;
     }
 
-    .notePad {
+    .note_area {
         position: relative;
-        height: 100%;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow:
-            0 0 0 1px #e3e5e8,
-            0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    }
 
-        .hole_area {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            bottom: 10px;
-            width: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+    .hole_area {
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 0;
+        width: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transform: translateX(23%);
 
-            .hole {
-                position: relative;
-                width: 25px;
-                height: 25px;
-                background: rgba(0, 0, 0, 0.2);
-                border-radius: 50%;
-            }
+        @include mediaQuery('mobile', 'min') {
+            width: 25px;
+        }
 
-            .ring {
+        .hole {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+
+            //ring
+            &:after {
+                content: '';
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                width: 150%;
+                width: 250%;
                 height: 50%;
                 margin: auto;
-                left: -100%;
+                left: -200%;
                 background: #eee;
-                border-radius: 30%;
-            }
-
-            @include mediaQuery('mobile', 'max') {
-                width: 20px;
-                .hole {
-                    width: 20px;
-                    height: 20px;
-                }
+                border-radius: 30px;
             }
         }
     }
+
+    .page {
+        position: relative;
+        aspect-ratio: 3/4;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow:
+            0 0 0 1px #e3e5e8,
+            0 1px 2px 0 rgba(0, 0, 0, 0.04);
+    }
+
     .content_area {
         display: flex;
         flex-direction: column;
@@ -64,15 +70,11 @@
         align-items: center;
         height: 100%;
         max-height: 100%;
-        padding: 14px 14px 14px 42px;
+        padding: 14px 14px 14px 37px;
         box-sizing: border-box;
 
-        @include mediaQuery('mobile', 'max') {
-            padding-left: 37px;
+        @include mediaQuery('mobile', 'min') {
+            padding-left: 42px;
         }
-    }
-
-    @include mediaQuery('mobile', 'max') {
-        margin: 15px 0;
     }
 }

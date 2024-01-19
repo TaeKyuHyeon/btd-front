@@ -2,11 +2,12 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import ContentWrapper from '@/components/layout/ContentWrapper';
 import Header from '@/components/layout/Header';
+import Diary from '@/pages/Diary';
 import Error from '@/pages/Error';
 import ErrorBoundary from '@/pages/ErrorBoundary';
+import PromptProto from '@/pages/PromptProto';
 
 import '@/scss/btd_global.scss';
-import PromptProto from './pages/PromptProto';
 
 function App() {
     return (
@@ -15,7 +16,8 @@ function App() {
                 <ContentWrapper>
                     <Header />
                     <Routes>
-                        <Route path="/" element={<PromptProto />} />
+                        <Route path="/" element={<Diary />} />
+                        <Route path="/prompt" element={<PromptProto />} />
                         <Route path="*" element={<Error />} />
                     </Routes>
                 </ContentWrapper>

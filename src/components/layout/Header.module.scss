@@ -3,16 +3,26 @@
 .article {
     display: flex;
     align-items: center;
-    justify-content: center;
-    max-width: 500px;
+    height: 42px;
     margin: 0 auto;
-    padding: 0 $content-x-padding;
-    @include mediaQuery('mobile', 'max') {
-        padding: 0 $content-x-padding-mobile;
+    padding: 0 $content-x-padding-mobile;
+
+    .item {
+        height: 100%;
+
+        &.logo {
+            height: initial;
+            padding: 0 10px;
+            font-size: 25px;
+        }
     }
 
     .img {
-        width: 100%;
-        height: auto;
+        height: 100%;
+        width: auto;
+    }
+
+    @include mediaQuery('tablet', 'min') {
+        padding: 0 $content-x-padding;
     }
 }

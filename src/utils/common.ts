@@ -10,4 +10,12 @@ export const sleep = (delay: number) =>
         }, delay);
     });
 
-export const testUtil = () => {};
+/**
+ * 1씩 증가하는 특정 길이의 배열 생성
+ * @param length
+ * @returns Array [0, 1, 2, 3, ...]
+ */
+export const indexArray = (length: number) => {
+    const arr = Array.from({length}, (v, i) => i);
+    return arr;
+};

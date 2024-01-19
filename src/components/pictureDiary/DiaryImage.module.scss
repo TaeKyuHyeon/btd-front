@@ -2,12 +2,13 @@
 
 .article {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    padding: 0 $content-x-padding-mobile;
+    align-items: center;
+    overflow: hidden;
+    flex: 1;
+    border-top: 1px solid #373737;
 
     @include mediaQuery('tablet', 'min') {
-        padding: 0 $content-x-padding;
+        border-width: 2px;
     }
 }

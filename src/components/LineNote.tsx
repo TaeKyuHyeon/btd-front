@@ -4,13 +4,13 @@ import styles from './LineNote.module.scss';
 
 const cx = classNames.bind(styles);
 
-interface NotePadProps {
+interface LineNoteProps {
     value: string;
     setValue: (value: string) => void;
     placeholder?: string;
 }
 
-function NotePad({value, setValue, placeholder}: NotePadProps) {
+function LineNote({value, setValue, placeholder}: LineNoteProps) {
     return (
         <div className={cx('article')}>
             <textarea
@@ -25,4 +25,4 @@ function NotePad({value, setValue, placeholder}: NotePadProps) {
     );
 }
 
-export default NotePad;
+export default LineNote;

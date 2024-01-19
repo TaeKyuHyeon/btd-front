@@ -6,7 +6,7 @@ const util = require('util');
 
 const exec = util.promisify(childProcessExec);
 
-const REPO_NAMES = { FE: '', BE: 'be' };
+const REPO_NAMES = {FE: '', BE: 'be'};
 const BRANCH_REGEX = new RegExp(`feature\/(${REPO_NAMES.FE}|${REPO_NAMES.BE})(#[0-9]+)`, 'g');
 const PERMITTED_MODES = ['message', 'template'];
 const MESSAGE_REGEX = /\[.*\]/;
@@ -31,7 +31,7 @@ const getBranchInfo = (branchName) => {
         process.exit(0);
     }
 
-    return { repoName, issueID };
+    return {repoName, issueID};
 };
 
 const checkCommitMessage = async () => {
@@ -47,7 +47,7 @@ const checkCommitMessage = async () => {
         console.log(err);
         process.exit(0);
     }
-    const { repoName, issueID } = getBranchInfo(branchName);
+    const {repoName, issueID} = getBranchInfo(branchName);
 
     if (!MESSAGE_REGEX.test(message) && PERMITTED_MODES.includes(mode)) {
         const template = `[${repoName !== REPO_NAMES.FE ? repoName : ''}${issueID}] ${message}`;

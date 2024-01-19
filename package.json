@@ -30,6 +30,7 @@
         ]
     },
     "dependencies": {
+        "@egjs/react-flicking": "^4.11.2",
         "@testing-library/jest-dom": "^6.2.0",
         "@testing-library/react": "^14.1.2",
         "@testing-library/user-event": "^14.5.2",
