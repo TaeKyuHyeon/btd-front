@@ -4,12 +4,11 @@
     position: relative;
     .text_input {
         position: absolute;
-        // top: 0;
-        bottom: 100%;
+        top: 0;
         left: 0;
-        // background: none;
+        background: none;
         border: 0;
-        // color: transparent;
+        color: transparent;
         appearance: none;
     }
     .text_box {

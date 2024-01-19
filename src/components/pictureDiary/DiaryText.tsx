@@ -12,12 +12,14 @@ const INITIAL_ARRAY: Array<{index: number; value: string | null}> = Array.from({
     value: null,
 }));
 const TEXT_CLASSNAME = {
-    CARET: 'hasCaret',
+    CARET: 'has_caret',
     SELECTED: 'is_selected',
 };
-
-function DiaryText() {
-    const [textValue, setTextValue] = useState('');
+interface DiaryTextProps {
+    textValue: string;
+    setTextValue: React.Dispatch<React.SetStateAction<string>>;
+}
+function DiaryText({textValue, setTextValue}: DiaryTextProps) {
     const [textArray, setTextArray] = useState(INITIAL_ARRAY);
     const [selection, setSelection] = useState<{start: number | null; end: number | null}>();
     const textInput = useRef<HTMLInputElement>(null);
