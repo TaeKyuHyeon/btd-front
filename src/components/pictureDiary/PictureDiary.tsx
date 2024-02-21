@@ -1,3 +1,5 @@
+import {forwardRef} from 'react';
+
 import classNames from 'classnames/bind';
 
 import {TImage} from '@/model/prompt';
@@ -15,16 +17,15 @@ interface PictureDiaryProps {
     isLoading: boolean;
     imageList: TImage[] | null;
 }
-function PictureDiary({value, setValue, isLoading, imageList}: PictureDiaryProps) {
-    return (
-        <div className={cx('article')}>
-            <div className={cx('box')}>
-                <DiaryInfo />
-                <DiaryImage isLoading={isLoading} imageList={imageList} />
-                <DiaryText textValue={value} setTextValue={setValue} />
-            </div>
+
+const PictureDiary = forwardRef<HTMLDivElement, PictureDiaryProps>(({value, setValue, isLoading, imageList}, ref) => (
+    <div className={cx('article')} ref={ref}>
+        <div className={cx('box')}>
+            <DiaryInfo />
+            <DiaryImage isLoading={isLoading} imageList={imageList} />
+            <DiaryText textValue={value} setTextValue={setValue} />
         </div>
-    );
-}
+    </div>
+));
 
 export default PictureDiary;

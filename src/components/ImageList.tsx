@@ -25,8 +25,14 @@ function ImageList({list, isflicking = false}: ImageListProps) {
             {list.map((image) => (
                 <div className={cx('item')} key={image.id}>
                     <picture className={cx('pic')}>
-                        <source srcSet={image.url} type="image/webp" width={540} height={540} className={cx('img')} />
-                        <img src={image.url} alt="" className={cx('img')} width={540} height={540} />
+                        {/* <source srcSet={image.url} type="image/webp" width={540} height={540} className={cx('img')} /> */}
+                        <img
+                            src={`data:image/gif;base64,${image.url}`}
+                            alt=""
+                            className={cx('img')}
+                            width={540}
+                            height={540}
+                        />
                     </picture>
                 </div>
             ))}

@@ -2,6 +2,11 @@
 
 .article {
     @extend %button_reset;
+
+    + .article {
+        margin-left: 20px;
+    }
+
     .inner {
         position: relative;
         min-width: 100px;
