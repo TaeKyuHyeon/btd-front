@@ -14,6 +14,16 @@
             height: 100%;
         }
     }
+    .save_area {
+        display: block;
+        width: 100%;
+        height: 100%;
+        .img {
+            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+        }
+    }
 
     .image_scroll {
         display: block;
@@ -65,7 +75,7 @@
         gap: 20px;
 
         .pic {
-            aspect-ratio: 1;
+            aspect-ratio: 560/392;
             display: flex;
             justify-content: center;
             align-items: center;
