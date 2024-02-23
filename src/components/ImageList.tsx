@@ -51,7 +51,7 @@ function ImageList({list, isflicking = false}: ImageListProps) {
                                 align="prev"
                                 horizontal
                                 autoResize
-                                defaultIndex={0}
+                                defaultIndex={currentIndex}
                                 onReady={(e) => {
                                     setTotalCount(e.currentTarget.panelCount);
                                     setCurrentIndex(e.currentTarget.index);

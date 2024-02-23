@@ -62,43 +62,4 @@
             }
         }
     }
-
-    > .weather {
-        display: grid;
-        align-items: center;
-        text-align: center;
-        grid-template-columns: repeat(4, 1fr);
-
-        .label {
-            position: relative;
-            display: flex;
-            align-items: center;
-            height: 100%;
-            padding: 0 1.176vw;
-
-            @include mediaQuery('tablet', 'min') {
-                padding: 0 8px;
-            }
-        }
-
-        .input {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            color: transparent;
-            margin: 0;
-            padding: 0;
-            border: none;
-            background-color: transparent;
-            appearance: none;
-            cursor: pointer;
-        }
-
-        .icon {
-            width: 100%;
-            height: auto;
-        }
-    }
 }
